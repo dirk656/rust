@@ -1,0 +1,8 @@
+struct Student
+{
+   
+}
+fn main ()
+{
+    
+}
