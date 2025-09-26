@@ -28,8 +28,7 @@ fn main ()
     print_enum(Color::Red);
     print_enum(Color::Green);
     print_enum(Color::Blue);
-    let num = 1;
-    let name = "building A".to_string();
-    print_building(BuildingLocation::Name(name));
-    print_building(BuildingLocation::Number(num));
+    let house = BuildingLocation::Number(123);
+    let office = BuildingLocation::Name(String::from("office"));
+    house.print_building();
 }
