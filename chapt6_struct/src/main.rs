@@ -27,6 +27,9 @@ impl Drink {
             println!("too expensive");
         }
     }
+    fn price (price:f64) -> Self{
+        Drink { flavor:Flavor::Sour, price }
+    }
 }
 
 fn main (){
@@ -41,5 +44,10 @@ fn main (){
         flavor:Flavor::Spicy,
         price:3.5,
     };
+     let sour = Drink{
+        flavor:Flavor::Sour,
+        price:20.0,
+    };
     drink.buy();
+    sour.buy();
 }
