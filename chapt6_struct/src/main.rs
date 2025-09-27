@@ -21,7 +21,7 @@ fn print_drink(drink:Drink){
 // method
 impl Drink {
     fn buy (&self){
-        if self.price < 5.0 {
+        if self.price < 10.0 {
             println!("buying");
         } else {
             println!("too expensive");
