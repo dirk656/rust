@@ -9,6 +9,7 @@ impl Counter{
     // Bukebianjieyong
     fn get_number(&self)->i32{
         self.number
+      
     }
 
     fn add(&mut self , increment:i32){
@@ -19,5 +20,8 @@ impl Counter{
 
 fn main ()
 {
+    let counter = Counter{
+        number:10
+    };
     
 }
