@@ -6,22 +6,39 @@ impl Counter{
     fn new(number:i32)->Self{
         Self{number}
     }
-    // Bukebianjieyong
+    // 不可变借用
     fn get_number(&self)->i32{
         self.number
       
     }
-
+    //不可变借用
     fn add(&mut self , increment:i32){
-        self.number + increment;
+        self.number += increment;
+    }
+    //move
+    fn give_up(self){
+        println!("free {}",self.number)
+    }
+    //move
+    fn combine(c1:Self,c2:Self)->Self{
+        Self{
+            number: c1.number + c2.number,
+        }
     }
 }
 
 
 fn main ()
 {
-    let counter = Counter{
-        number:10
-    };
+    let mut c1 = Counter::new(0);
+    println!("c1 number {}",c1.get_number());
+    c1.add(5);
+    println!("c1 number {}",c1.get_number());
+    c1.give_up();
+    println!("c1 number {}",c1.get_number()); // error use after move
+
+    let mut c2 = Counter::new(10);
+    let mut c3 = Counter::combine(c1,c2); // error use after move
+    println!("c3 number {}",c3.get_number());
     
 }
